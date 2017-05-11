@@ -123,6 +123,7 @@
   <ItemGroup>
     <Compile Include="Entities\Question.cs" />
     <Compile Include="GreatTestDbContext.cs" />
+    <Compile Include="GreatTestDbInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\QuestRepository.cs" />
   </ItemGroup>
