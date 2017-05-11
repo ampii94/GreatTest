@@ -15,9 +15,24 @@ namespace DataLayer.Repositories
             this.context = context;
         }
 
-        public List<Question> getQuest()
+        public int countRows()
         {
-            return context.Quests.OrderBy(x => Guid.NewGuid()).Take(1).ToList();
+            int rowCount = context.Quests.Count(); 
+
+            return rowCount;
+        }
+
+        public int createRandomId(int numberOfQuests)
+        {
+            var random = new Random();
+            var maxNumber = numberOfQuests + 1;
+            var randomId = random.Next(1, maxNumber);
+            return randomId;
+        }
+        public Question getQuest(int id)
+        {
+            return context.Quests.Find(id);
+           
         }
         public void Dispose()
         {

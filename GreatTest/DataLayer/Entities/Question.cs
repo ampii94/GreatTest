@@ -7,7 +7,7 @@ namespace DataLayer.Entities
 {
     public class Question
     {
-        public virtual int QuestId { get; set; }
+        public virtual int ID { get; set; }
         public virtual string Quest { get; set; }
         public virtual string AnsA { get; set; }
         public virtual string AnsB { get; set;}

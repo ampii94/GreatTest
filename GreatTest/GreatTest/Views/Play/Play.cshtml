@@ -1,28 +1,46 @@
-﻿
+﻿@model GreatTest.Models.PlayModel
+
 @{
     ViewBag.Title = "Play";
 }
 
 <h2>Play</h2>
+
+
 <div class="row">
     <div class="form-group">
         <div class="form-group required-field-block">
-            <h4></h4>
-            <button class="btn btn-primary" id="btnAnsA"> SVAR A</button>
-            <button class="btn btn-primary" id="btnAnsB"> SVAR B</button>
-            <button class="btn btn-primary" id="btnAnsC"> SVAR C</button>
-            <button class="btn btn-primary" id="btnAnsD"> SVAR D</button>
+            @Html.TextBoxFor(x => x.Quest, new { @class = "form-control", @Readonly = true})
+            
+
+            
+            <button class="btn btn-primary" id="AnsA"> @Html.TextBoxFor(x => x.AnsA, new { @class = "form-control", @Readonly = true})</button>
+            <button class="btn btn-primary" id="AnsB"> @Html.TextBoxFor(x => x.AnsB, new { @class = "form-control", @Readonly = true })</button>
+            <button class="btn btn-primary" id="AnsC"> @Html.TextBoxFor(x => x.AnsC, new { @class = "form-control", @Readonly = true})</button>
+            <button class="btn btn-primary" id="AnsD"> @Html.TextBoxFor(x => x.AnsD, new { @class = "form-control", @Readonly = true})</button>
+            @Html.HiddenFor(model => model.CorAns)
         </div>
     </div>
 
     <script type="text/javascript">
         $(function () {
-            $('#btnAnsA').click(function () {
-                var svar = $('#btnAnsA').text();
+            $('#AnsA').click(function () {
+                var svar = $('#AnsA').id();
+               var rattSvar = @Model.CorAns;
+                   if(svar = rattSvar)
+                   {
+                       AnsA.BackColor = Color.Green;
+                   }
+                   else
+                   {
+                       AnsA.BackColor = Color.Red;
+                   }
+                       
+                
+
             })
         })
     </script>
-         
-</div>
 
+</div>
 

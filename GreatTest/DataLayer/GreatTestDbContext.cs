@@ -11,19 +11,19 @@ namespace DataLayer
 {
     public class GreatTestDbContext : DbContext
     {
-        public virtual DbSet<Question> Quests { get; set; }
+        
 
         public GreatTestDbContext()
             :base("name=GreatTestDbContext")
         {
-            Database.SetInitializer<GreatTestDbContext>(new DropCreateDatabaseIfModelChanges<GreatTestDbContext>());
+            Database.SetInitializer(new GreatTestDbInitializer());
         }
+
+        public DbSet<Question> Quests { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
-
-
     }
 }

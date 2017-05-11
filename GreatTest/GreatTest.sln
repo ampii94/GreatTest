@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatTest", "GreatTest\GreatTest.csproj", "{429C5F5C-2264-4A29-83C4-C8B3F1589676}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8BAF79A0-6D47-48AA-B70D-A0402EA8F06B} = {8BAF79A0-6D47-48AA-B70D-A0402EA8F06B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{8BAF79A0-6D47-48AA-B70D-A0402EA8F06B}"
 EndProject

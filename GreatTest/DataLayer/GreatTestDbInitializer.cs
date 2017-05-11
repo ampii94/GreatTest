@@ -6,7 +6,7 @@ using DataLayer.Entities;
 
 namespace DataLayer
 {
-    public class GreatTestDbInitializer : System.Data.Entity.CreateDatabaseIfNotExists<GreatTestDbContext>
+    public class GreatTestDbInitializer : System.Data.Entity.DropCreateDatabaseAlways<GreatTestDbContext>
     {
         protected override void Seed(GreatTestDbContext context)
         {
