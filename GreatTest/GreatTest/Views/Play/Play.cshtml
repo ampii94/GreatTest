@@ -4,42 +4,49 @@
     ViewBag.Title = "Play";
 }
 
-<h2>Play</h2>
 
 
-<div class="row">
+
+<div class="row" id="QuestPage" >
     <div class="form-group">
-        <div class="form-group required-field-block">
-            @Html.TextBoxFor(x => x.Quest, new { @class = "form-control", @Readonly = true})
+        <div class="form-group required-field-block" id="QuestBox">
+            <h3 id="quest"> @Model.Quest</h3>
+            </div>
+        <br />
             
-
+            <div id="ans">
+            <button class="ansbtn" id="AnsA" name="AnsA" onclick="checkAns('AnsA', AnsA )"> @Model.AnsA </button>
+            <button class="ansbtn" id="AnsB"name="AnsB" onclick="checkAns('AnsB', AnsB)"> @Model.AnsB </button>
             
-            <button class="btn btn-primary" id="AnsA"> @Html.TextBoxFor(x => x.AnsA, new { @class = "form-control", @Readonly = true})</button>
-            <button class="btn btn-primary" id="AnsB"> @Html.TextBoxFor(x => x.AnsB, new { @class = "form-control", @Readonly = true })</button>
-            <button class="btn btn-primary" id="AnsC"> @Html.TextBoxFor(x => x.AnsC, new { @class = "form-control", @Readonly = true})</button>
-            <button class="btn btn-primary" id="AnsD"> @Html.TextBoxFor(x => x.AnsD, new { @class = "form-control", @Readonly = true})</button>
-            @Html.HiddenFor(model => model.CorAns)
-        </div>
+            <button class="ansbtn" id="AnsC"name="AnsC" onclick="checkAns('AnsC', AnsC)"> @Model.AnsC </button>
+            <button class="ansbtn" id="AnsD"name="AnsD" onclick="checkAns('AnsD', AnsD)"> @Model.AnsD </button>
+           </div>
+       
     </div>
 
-    <script type="text/javascript">
-        $(function () {
-            $('#AnsA').click(function () {
-                var svar = $('#AnsA').id();
+    <script>
+        function checkAns(button, answer) {
+            
+            
                var rattSvar = @Model.CorAns;
-                   if(svar = rattSvar)
+                   if(answer == rattSvar)
                    {
-                       AnsA.BackColor = Color.Green;
+                       document.getElementById(button).style.backgroundColor="green";
+                       setTimeout(location.reload.bind(location), 6000);    
                    }
                    else
                    {
-                       AnsA.BackColor = Color.Red;
+                       document.getElementById(button).style.backgroundColor = "Red";
+                       setTimeout(location.reload.bind(location), 6000);
                    }
+                   setTimeout(function(){
+                       window.location.reload();
+                   }, 3000);
                        
                 
 
-            })
-        })
+            
+        }
     </script>
 
 </div>
