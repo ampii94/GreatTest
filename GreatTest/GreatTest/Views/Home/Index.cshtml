@@ -3,6 +3,20 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <h1>TheGreatTest</h1>
+    <br />
+    <h3>Såhär spelar du</h3>
+    <p>Klicka på spela. Då visas en fråga samt fyra svarsalternativ. 
+    Du har då 15 sekunder på dig att läsa samt svara på frågan. Du svarar genom att klicka på något av alternativen, 
+    du får då respons genom färgen på det valda alternativet. Rött för fel, grönt för rätt svar. Svarar du fel visas ej rätt svar. 
+    Nästa fråga visas sedan automatiskt. 
+    Lycka till!
+    </p>
+    <br />
+    <div id="PlayBtn">
+            
+       <input type="button" id="playBtn" value="Spela" onclick="@("window.location.href='" + Url.Action("Play", "Play") + "'");" />
+    </div>
+    
+    
 </div>
