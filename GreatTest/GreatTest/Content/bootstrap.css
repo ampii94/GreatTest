@@ -24,9 +24,8 @@
 #playBtn {
     height: 200px !important;
     width: 300px !important;
-    color: azure !important;
     font-size: large !important;
-    background-color:azure !important;
+    background-color:lightgreen !important;
 }
  #QuestPage {
       margin-left: auto !important;
